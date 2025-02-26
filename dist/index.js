@@ -1,6 +1,6 @@
 //Exercício 1
 let valores = [10, 15, 20];
-let somaValores = valores.reduce((acc, val) => acc + val, 0);
+let somaValores = valores.reduce((a, b) => a + b, 0);
 console.log("Soma:", somaValores);
 //Exercício 2
 function mensagem(nome) {

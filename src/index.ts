@@ -1,6 +1,6 @@
 //Exercício 1
 let valores: number[] = [10, 15, 20];
-let somaValores: number = valores.reduce((acc, val) => acc + val, 0);
+let somaValores: number = valores.reduce((a, b) => a + b, 0);
 console.log("Soma:", somaValores);
 
 //Exercício 2
