@@ -37,13 +37,51 @@ const meuCarro: Car = {
 //Exercício 2
 
 interface Multiplicacao {
-    num1: number,
-    num2: number
+
+    (num1: number, num2: number): number;
 };
-const operacao: Multiplicacao = {
-    num1: 10,
-    num2: 10
+const operacao: Multiplicacao = (num1,num2) => {
+    return num1 * num2;
 };
-function multiplica (num1, num2){
-    console.log(`O resultado da multiplicação é: ${num1 * num2}`)
-}
+
+console.log(operacao(5,8));
+
+//Exercício 3
+
+function inverterArray<T>(array: T[]): T[] {
+    return array.slice().reverse();
+};
+
+  console.log(inverterArray([1, 2, 3, 4, 5])); 
+
+//Exercício 4
+
+interface Repositorio<T> {
+    salvar(dado: T): void;
+    obterTodos(): T[];
+  }
+  
+  // Definição da interface Usuario
+  interface Usuario {
+    nome: string;
+    email: string;
+  }
+  
+  // Criando o repositório 
+  class RepositorioUsuario implements Repositorio<Usuario> {
+    private usuarios: Usuario[] = [];
+  
+    salvar(dado: Usuario): void {
+      this.usuarios.push(dado);
+    }
+  
+    obterTodos(): Usuario[] {
+      return this.usuarios;
+    }
+  }
+  
+  // Testando o repositório de usuários
+  const repoUsuarios = new RepositorioUsuario();
+  repoUsuarios.salvar({ nome: "Lucca", email: "lucca@gmail.com" });
+  repoUsuarios.salvar({ nome: "Samara", email: "samara@gmail.com" });
+  console.log(repoUsuarios.obterTodos());
